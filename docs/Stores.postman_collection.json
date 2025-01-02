@@ -1,0 +1,562 @@
+{
+	"info": {
+		"_postman_id": "afc48bbb-3369-4964-8a45-a21a23a4e9cf",
+		"name": "Stores",
+		"description": "A small collection of API endpoints for the Snappy Shopper tech test.\n\nFor additional documentation please refer to README.md in the repo.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2581719"
+	},
+	"item": [
+		{
+			"name": "Get Store",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/stores/:store_uuid",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"stores",
+						":store_uuid"
+					],
+					"variable": [
+						{
+							"key": "store_uuid",
+							"value": "86cba8a1-985c-4d38-b697-2ff3f2a8235e"
+						}
+					]
+				},
+				"description": "### GET /api/stores/:store_uuid\n\nThis endpoint retrieves the details of a specific store identified by the `store_uuid`.\n\n#### Request\n\nNo request body is required for this endpoint.\n\n#### Response\n\nThe response will be in JSON format and will include the following fields:\n\n- `uuid` (string): The UUID of the store.\n    \n- `organisation_uuid` (string): The UUID of the organization to which the store belongs.\n    \n- `postcode` (string): The postcode of the store location.\n    \n- `name` (string): The name of the store.\n    \n- `open` (integer): Indicates whether the store is open (1) or closed (0).\n    \n- `max_delivery_distance` (integer): The maximum delivery distance for the store.\n    \n- `latitude` (float): The latitude coordinate of the store location.\n    \n- `longitude` (float): The longitude coordinate of the store location.\n    \n- `categories` (array): An array of categories associated with the store, each containing:\n    \n    - `id` (integer): The ID of the category.\n        \n    - `name` (string): The name of the category.\n        \n\nExample response:\n\n``` json\n{\n  \"uuid\": \"\",\n  \"organisation_uuid\": \"\",\n  \"postcode\": \"\",\n  \"name\": \"\",\n  \"open\": 0,\n  \"max_delivery_distance\": 0,\n  \"latitude\": 0,\n  \"longitude\": 0,\n  \"categories\": [\n    {\n      \"id\": 0,\n      \"name\": \"\"\n    }\n  ]\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "404",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://snappyshopper.local/api/stores/:store_uuid",
+							"protocol": "https",
+							"host": [
+								"snappyshopper",
+								"local"
+							],
+							"path": [
+								"api",
+								"stores",
+								":store_uuid"
+							],
+							"variable": [
+								{
+									"key": "store_uuid",
+									"value": "65fba3be-64ed-4407-ae85-8058c9e8cc69"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 02 Jan 2025 14:12:30 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.54 (Unix) mod_fastcgi/mod_fastcgi-SNAP-0910052141 OpenSSL/1.0.2u mod_wsgi/3.5 Python/2.7.18"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Failed to get store\",\n    \"error\": \"Store not found\"\n}"
+				},
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/stores/:store_uuid",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"stores",
+								":store_uuid"
+							],
+							"variable": [
+								{
+									"key": "store_uuid",
+									"value": "86cba8a1-985c-4d38-b697-2ff3f2a8235e"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 02 Jan 2025 14:22:49 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.54 (Unix) mod_fastcgi/mod_fastcgi-SNAP-0910052141 OpenSSL/1.0.2u mod_wsgi/3.5 Python/2.7.18"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"uuid\": \"86cba8a1-985c-4d38-b697-2ff3f2a8235e\",\n    \"organisation_uuid\": \"2747afa6-3dbe-4d5d-b20f-4af4f362faa2\",\n    \"postcode\": \"LE38PA\",\n    \"name\": \"Test Store\",\n    \"open\": 1,\n    \"max_delivery_distance\": 200,\n    \"latitude\": 52.650145,\n    \"longitude\": -1.189084,\n    \"categories\": [\n        {\n            \"id\": 1,\n            \"name\": \"Takeaway\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Shop\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Restaurant\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Cafe\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Index Stores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/stores",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"stores"
+					]
+				},
+				"description": "### GET /api/stores\n\nThis endpoint retrieves a list of stores.\n\n#### Request\n\nThis is a simple HTTP GET request to retrieve the list of stores.\n\n#### Response\n\nThe response will be a JSON object with a `data` array containing store objects. Each store object has the following properties:\n\n- `uuid` (string): The UUID of the store.\n    \n- `organisation_uuid` (string): The UUID of the organisation the store belongs to.\n    \n- `postcode` (string): The postcode of the store location.\n    \n- `name` (string): The name of the store.\n    \n- `open` (integer): The open status of the store.\n    \n- `max_delivery_distance` (integer): The maximum delivery distance of the store.\n    \n- `latitude` (integer): The latitude of the store location.\n    \n- `longitude` (integer): The longitude of the store location.\n    \n- `categories` (array): An array of category objects, each containing an `id` (integer) and a `name` (string).\n    \n\nExample response:\n\n``` json\n{\n  \"data\": [\n    {\n      \"uuid\": \"\",\n      \"organisation_uuid\": \"\",\n      \"postcode\": \"\",\n      \"name\": \"\",\n      \"open\": 0,\n      \"max_delivery_distance\": 0,\n      \"latitude\": 0,\n      \"longitude\": 0,\n      \"categories\": [\n        {\n          \"id\": 0,\n          \"name\": \"\"\n        }\n      ]\n    }\n  ]\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://snappyshopper.local/api/stores",
+							"protocol": "https",
+							"host": [
+								"snappyshopper",
+								"local"
+							],
+							"path": [
+								"api",
+								"stores"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 02 Jan 2025 14:11:28 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.54 (Unix) mod_fastcgi/mod_fastcgi-SNAP-0910052141 OpenSSL/1.0.2u mod_wsgi/3.5 Python/2.7.18"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"uuid\": \"86cba8a1-985c-4d38-b697-2ff3f2a8235e\",\n            \"organisation_uuid\": \"2747afa6-3dbe-4d5d-b20f-4af4f362faa2\",\n            \"postcode\": \"LE38PA\",\n            \"name\": \"Test Store\",\n            \"open\": 1,\n            \"max_delivery_distance\": 200,\n            \"latitude\": 52.650145,\n            \"longitude\": -1.189084,\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Takeaway\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Shop\"\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"Restaurant\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"Cafe\"\n                }\n            ]\n        },\n        {\n            \"uuid\": \"87254fb6-2630-4657-80ab-d3ee5a3cc098\",\n            \"organisation_uuid\": \"2747afa6-3dbe-4d5d-b20f-4af4f362faa2\",\n            \"postcode\": \"LE38PA\",\n            \"name\": \"123\",\n            \"open\": 1,\n            \"max_delivery_distance\": 300,\n            \"latitude\": 52.650145,\n            \"longitude\": -1.189084,\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Takeaway\"\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"Restaurant\"\n                }\n            ]\n        },\n        {\n            \"uuid\": \"68e14590-e7fe-4a1d-8787-0c5694c8c8b6\",\n            \"organisation_uuid\": \"2747afa6-3dbe-4d5d-b20f-4af4f362faa2\",\n            \"postcode\": \"LE131HS\",\n            \"name\": \"back-end\",\n            \"open\": 1,\n            \"max_delivery_distance\": 300,\n            \"latitude\": 52.778613,\n            \"longitude\": -0.883849,\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Takeaway\"\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"Restaurant\"\n                }\n            ]\n        },\n        {\n            \"uuid\": \"16150487-c9f9-42a1-a4b0-31ff7baec0a2\",\n            \"organisation_uuid\": \"2747afa6-3dbe-4d5d-b20f-4af4f362faa2\",\n            \"postcode\": \"LE131HS\",\n            \"name\": \"1080p\",\n            \"open\": 1,\n            \"max_delivery_distance\": 1,\n            \"latitude\": 52.778613,\n            \"longitude\": -0.883849,\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Takeaway\"\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"Restaurant\"\n                }\n            ]\n        },\n        {\n            \"uuid\": \"0ed88264-a69d-4d6c-b093-258fa7dd6683\",\n            \"organisation_uuid\": \"2747afa6-3dbe-4d5d-b20f-4af4f362faa2\",\n            \"postcode\": \"LE38PA\",\n            \"name\": \"primary\",\n            \"open\": 1,\n            \"max_delivery_distance\": 3000,\n            \"latitude\": 52.650145,\n            \"longitude\": -1.189084,\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Takeaway\"\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"Restaurant\"\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Stores Delivering",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/stores/delivering/LE38PA",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"stores",
+						"delivering",
+						"LE38PA"
+					]
+				},
+				"description": "### GET /api/stores/delivering/LE38PA\n\nThis endpoint retrieves the stores delivering to a specified postcode.\n\n#### Request\n\nNo request body is required for this request.\n\n- URL parameter:\n    \n    - postcode (string): The postcode for which the delivering stores are to be retrieved.\n        \n\n#### Response\n\nThe response will be a JSON array containing store information for the specified postcode.\n\nJSON Schema:\n\n``` json\n{\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"uuid\": {\"type\": \"string\"},\n      \"organisation_uuid\": {\"type\": \"string\"},\n      \"postcode\": {\"type\": \"string\"},\n      \"name\": {\"type\": \"string\"},\n      \"open\": {\"type\": \"number\"},\n      \"max_delivery_distance\": {\"type\": \"number\"},\n      \"latitude\": {\"type\": \"number\"},\n      \"longitude\": {\"type\": \"number\"},\n      \"categories\": {\n        \"type\": \"array\",\n        \"items\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"id\": {\"type\": \"number\"},\n            \"name\": {\"type\": \"string\"}\n          }\n        }\n      }\n    }\n  }\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://snappyshopper.local/api/stores/delivering/LE38PA",
+							"protocol": "https",
+							"host": [
+								"snappyshopper",
+								"local"
+							],
+							"path": [
+								"api",
+								"stores",
+								"delivering",
+								"LE38PA"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 02 Jan 2025 14:13:37 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.54 (Unix) mod_fastcgi/mod_fastcgi-SNAP-0910052141 OpenSSL/1.0.2u mod_wsgi/3.5 Python/2.7.18"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"uuid\": \"86cba8a1-985c-4d38-b697-2ff3f2a8235e\",\n            \"organisation_uuid\": \"2747afa6-3dbe-4d5d-b20f-4af4f362faa2\",\n            \"postcode\": \"LE38PA\",\n            \"name\": \"Test Store\",\n            \"open\": 1,\n            \"max_delivery_distance\": 200,\n            \"latitude\": 52.650145,\n            \"longitude\": -1.189084,\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Takeaway\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Shop\"\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"Restaurant\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"Cafe\"\n                }\n            ]\n        },\n        {\n            \"uuid\": \"87254fb6-2630-4657-80ab-d3ee5a3cc098\",\n            \"organisation_uuid\": \"2747afa6-3dbe-4d5d-b20f-4af4f362faa2\",\n            \"postcode\": \"LE38PA\",\n            \"name\": \"123\",\n            \"open\": 1,\n            \"max_delivery_distance\": 300,\n            \"latitude\": 52.650145,\n            \"longitude\": -1.189084,\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Takeaway\"\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"Restaurant\"\n                }\n            ]\n        },\n        {\n            \"uuid\": \"0ed88264-a69d-4d6c-b093-258fa7dd6683\",\n            \"organisation_uuid\": \"2747afa6-3dbe-4d5d-b20f-4af4f362faa2\",\n            \"postcode\": \"LE38PA\",\n            \"name\": \"primary\",\n            \"open\": 1,\n            \"max_delivery_distance\": 3000,\n            \"latitude\": 52.650145,\n            \"longitude\": -1.189084,\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Takeaway\"\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"Restaurant\"\n                }\n            ]\n        },\n        {\n            \"uuid\": \"68e14590-e7fe-4a1d-8787-0c5694c8c8b6\",\n            \"organisation_uuid\": \"2747afa6-3dbe-4d5d-b20f-4af4f362faa2\",\n            \"postcode\": \"LE131HS\",\n            \"name\": \"back-end\",\n            \"open\": 1,\n            \"max_delivery_distance\": 300,\n            \"latitude\": 52.778613,\n            \"longitude\": -0.883849,\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Takeaway\"\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"Restaurant\"\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Stores Near",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/stores/near/LE38PA?radius=5",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"stores",
+						"near",
+						"LE38PA"
+					],
+					"query": [
+						{
+							"key": "radius",
+							"value": "5",
+							"description": "Radius is killometers"
+						}
+					]
+				},
+				"description": "### GET /api/stores/near/LE38PA?radius=50\n\nThis endpoint retrieves a list of stores near the specified postcode within the given radius.\n\n#### Request\n\nNo request body parameters are required. The query parameter \"radius\" specifies the distance in miles from the specified postcode.\n\n- `radius` (number, required): The distance in kilometers (km) from the specified postcode.\n    \n\n#### Response\n\nThe response will be in JSON format and will contain an array of store objects with the following properties:\n\n- `uuid` (string): The UUID of the store.\n    \n- `organisation_uuid` (string): The UUID of the organization.\n    \n- `postcode` (string): The postcode of the store location.\n    \n- `name` (string): The name of the store.\n    \n- `open` (number): Indicates if the store is open (1) or closed (0).\n    \n- `max_delivery_distance` (number): The maximum delivery distance of the store.\n    \n- `latitude` (number): The latitude of the store location.\n    \n- `longitude` (number): The longitude of the store location.\n    \n- `distance` (number): The distance of the store from the specified postcode.\n    \n- `categories` (array): An array of category objects with the following properties:\n    \n    - `id` (number): The ID of the category.\n        \n    - `name` (string): The name of the category.\n        \n\n#### Example\n\n``` json\n{\n    \"data\": [\n        {\n            \"uuid\": \"\",\n            \"organisation_uuid\": \"\",\n            \"postcode\": \"\",\n            \"name\": \"\",\n            \"open\": 0,\n            \"max_delivery_distance\": 0,\n            \"latitude\": 0,\n            \"longitude\": 0,\n            \"distance\": 0,\n            \"categories\": [\n                {\n                    \"id\": 0,\n                    \"name\": \"\"\n                }\n            ]\n        }\n    ]\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/stores/near/LE38PA?radius=50",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"stores",
+								"near",
+								"LE38PA"
+							],
+							"query": [
+								{
+									"key": "radius",
+									"value": "50",
+									"description": "Radius is killometers"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 02 Jan 2025 14:23:16 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.54 (Unix) mod_fastcgi/mod_fastcgi-SNAP-0910052141 OpenSSL/1.0.2u mod_wsgi/3.5 Python/2.7.18"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"uuid\": \"86cba8a1-985c-4d38-b697-2ff3f2a8235e\",\n            \"organisation_uuid\": \"2747afa6-3dbe-4d5d-b20f-4af4f362faa2\",\n            \"postcode\": \"LE38PA\",\n            \"name\": \"Test Store\",\n            \"open\": 1,\n            \"max_delivery_distance\": 200,\n            \"latitude\": 52.650145,\n            \"longitude\": -1.189084,\n            \"distance\": 0,\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Takeaway\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Shop\"\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"Restaurant\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"Cafe\"\n                }\n            ]\n        },\n        {\n            \"uuid\": \"87254fb6-2630-4657-80ab-d3ee5a3cc098\",\n            \"organisation_uuid\": \"2747afa6-3dbe-4d5d-b20f-4af4f362faa2\",\n            \"postcode\": \"LE38PA\",\n            \"name\": \"123\",\n            \"open\": 1,\n            \"max_delivery_distance\": 300,\n            \"latitude\": 52.650145,\n            \"longitude\": -1.189084,\n            \"distance\": 0,\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Takeaway\"\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"Restaurant\"\n                }\n            ]\n        },\n        {\n            \"uuid\": \"0ed88264-a69d-4d6c-b093-258fa7dd6683\",\n            \"organisation_uuid\": \"2747afa6-3dbe-4d5d-b20f-4af4f362faa2\",\n            \"postcode\": \"LE38PA\",\n            \"name\": \"primary\",\n            \"open\": 1,\n            \"max_delivery_distance\": 3000,\n            \"latitude\": 52.650145,\n            \"longitude\": -1.189084,\n            \"distance\": 0,\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Takeaway\"\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"Restaurant\"\n                }\n            ]\n        },\n        {\n            \"uuid\": \"0f6ddbc1-f667-4235-b196-96f7b8f6522c\",\n            \"organisation_uuid\": \"2747afa6-3dbe-4d5d-b20f-4af4f362faa2\",\n            \"postcode\": \"LE38PA\",\n            \"name\": \"Test Store\",\n            \"open\": 1,\n            \"max_delivery_distance\": 10,\n            \"latitude\": 52.650145,\n            \"longitude\": -1.189084,\n            \"distance\": 0,\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Takeaway\"\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"Restaurant\"\n                }\n            ]\n        },\n        {\n            \"uuid\": \"68e14590-e7fe-4a1d-8787-0c5694c8c8b6\",\n            \"organisation_uuid\": \"2747afa6-3dbe-4d5d-b20f-4af4f362faa2\",\n            \"postcode\": \"LE131HS\",\n            \"name\": \"back-end\",\n            \"open\": 1,\n            \"max_delivery_distance\": 300,\n            \"latitude\": 52.778613,\n            \"longitude\": -0.883849,\n            \"distance\": 25.036107396397632,\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Takeaway\"\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"Restaurant\"\n                }\n            ]\n        },\n        {\n            \"uuid\": \"16150487-c9f9-42a1-a4b0-31ff7baec0a2\",\n            \"organisation_uuid\": \"2747afa6-3dbe-4d5d-b20f-4af4f362faa2\",\n            \"postcode\": \"LE131HS\",\n            \"name\": \"1080p\",\n            \"open\": 1,\n            \"max_delivery_distance\": 1,\n            \"latitude\": 52.778613,\n            \"longitude\": -0.883849,\n            \"distance\": 25.036107396397632,\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Takeaway\"\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"Restaurant\"\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Store",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"postcode\": \"LE3 8PA\",\n    \"name\": \"Test Store\",\n    \"open\": 1,\n    \"max_delivery_distance\": 10,\n    \"category_ids\": [1,3]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/stores",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"stores"
+					]
+				},
+				"description": "### API Request Description\n\nThis endpoint allows the creation of a new store.\n\n#### Request Body\n\n- `postcode` (string) - The postcode of the store.\n    \n- `name` (string) - The name of the store.\n    \n- `open` (integer) - Indicates if the store is open (1) or closed (0).\n    \n- `max_delivery_distance` (integer) - The maximum delivery distance of the store in kilometers (km).\n    \n- `category_ids` (array of integers) - The IDs of the categories associated with the store.\n    \n\n### API Response\n\nThe response will be in JSON format with the following schema:\n\n``` json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"message\": {\n      \"type\": \"string\"\n    },\n    \"store\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"uuid\": {\n          \"type\": \"string\"\n        },\n        \"organisation_uuid\": {\n          \"type\": \"string\"\n        },\n        \"postcode\": {\n          \"type\": \"string\"\n        },\n        \"name\": {\n          \"type\": \"string\"\n        },\n        \"open\": {\n          \"type\": \"integer\"\n        },\n        \"max_delivery_distance\": {\n          \"type\": \"integer\"\n        },\n        \"latitude\": {\n          \"type\": \"number\"\n        },\n        \"longitude\": {\n          \"type\": \"number\"\n        },\n        \"categories\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"id\": {\n                \"type\": \"integer\"\n              },\n              \"name\": {\n                \"type\": \"string\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"postcode\": \"LE3 8PA\",\n    \"name\": \"Test Store\",\n    \"open\": 1,\n    \"max_delivery_distance\": 10,\n    \"category_ids\": [1,3]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/stores",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"stores"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 02 Jan 2025 14:23:02 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.54 (Unix) mod_fastcgi/mod_fastcgi-SNAP-0910052141 OpenSSL/1.0.2u mod_wsgi/3.5 Python/2.7.18"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Store created successfully.\",\n    \"store\": {\n        \"uuid\": \"0f6ddbc1-f667-4235-b196-96f7b8f6522c\",\n        \"organisation_uuid\": \"2747afa6-3dbe-4d5d-b20f-4af4f362faa2\",\n        \"postcode\": \"LE38PA\",\n        \"name\": \"Test Store\",\n        \"open\": 1,\n        \"max_delivery_distance\": 10,\n        \"latitude\": 52.650145,\n        \"longitude\": -1.189084,\n        \"categories\": [\n            {\n                \"id\": 1,\n                \"name\": \"Takeaway\"\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Restaurant\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{api_key}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
