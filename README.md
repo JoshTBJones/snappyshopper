@@ -31,8 +31,6 @@ To run the tests, use the `php artisan test` command.
 
 **Note:** Tests for the postcode import functionality have been commented out as they were taking too long to run and test.
 
+## Additional Information
 
-
-
-
-
+Additional information can be found in the `docs/` directory.
