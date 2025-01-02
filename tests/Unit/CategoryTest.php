@@ -16,7 +16,7 @@ class CategoryTest extends TestCase
      */
     public function testCategoryCreation()
     {
-        $category = Category::factory()->create([
+        Category::factory()->create([
             'name' => 'Test Category',
             'description' => 'A test category description',
         ]);
