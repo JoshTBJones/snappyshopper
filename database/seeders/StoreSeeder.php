@@ -19,11 +19,13 @@ class StoreSeeder extends Seeder
         $postcode = Postcode::first();
 
         $store = Store::create([
-            'name' => 'Test Store',
-            'organisation_id' => $organisation->id,
-            'postcode_id' => $postcode->id,
-            'open' => true,
-            'max_delivery_distance' => 100, // 100km
+            'name'                  => 'Test Store',
+            'organisation_id'       => $organisation->id,
+            'postcode_id'           => $postcode->id,
+            'open'                  => true,
+            'max_delivery_distance' => 100, // 100km,
+            'latitude'              => $postcode->latitude,
+            'longitude'             => $postcode->longitude,
         ]);
 
         $store->categories()->attach([1, 2, 3, 4]);
