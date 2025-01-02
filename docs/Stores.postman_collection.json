@@ -24,7 +24,7 @@
 					"variable": [
 						{
 							"key": "store_uuid",
-							"value": "86cba8a1-985c-4d38-b697-2ff3f2a8235e"
+							"value": "972c96c1-93df-4699-835f-9b9978ec05bf"
 						}
 					]
 				},
@@ -255,14 +255,20 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}api/stores/delivering/LE38PA",
+					"raw": "{{url}}api/stores/delivering/:postcode",
 					"host": [
 						"{{url}}api"
 					],
 					"path": [
 						"stores",
 						"delivering",
-						"LE38PA"
+						":postcode"
+					],
+					"variable": [
+						{
+							"key": "postcode",
+							"value": "LE38PA"
+						}
 					]
 				},
 				"description": "### GET /api/stores/delivering/LE38PA\n\nThis endpoint retrieves the stores delivering to a specified postcode.\n\n#### Request\n\nNo request body is required for this request.\n\n- URL parameter:\n    \n    - postcode (string): The postcode for which the delivering stores are to be retrieved.\n        \n\n#### Response\n\nThe response will be a JSON array containing store information for the specified postcode.\n\nJSON Schema:\n\n``` json\n{\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"uuid\": {\"type\": \"string\"},\n      \"organisation_uuid\": {\"type\": \"string\"},\n      \"postcode\": {\"type\": \"string\"},\n      \"name\": {\"type\": \"string\"},\n      \"open\": {\"type\": \"number\"},\n      \"max_delivery_distance\": {\"type\": \"number\"},\n      \"latitude\": {\"type\": \"number\"},\n      \"longitude\": {\"type\": \"number\"},\n      \"categories\": {\n        \"type\": \"array\",\n        \"items\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"id\": {\"type\": \"number\"},\n            \"name\": {\"type\": \"string\"}\n          }\n        }\n      }\n    }\n  }\n}\n\n ```"
@@ -340,20 +346,26 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}api/stores/near/LE38PA?radius=5",
+					"raw": "{{url}}api/stores/near/:postcode?radius=50",
 					"host": [
 						"{{url}}api"
 					],
 					"path": [
 						"stores",
 						"near",
-						"LE38PA"
+						":postcode"
 					],
 					"query": [
 						{
 							"key": "radius",
-							"value": "5",
+							"value": "50",
 							"description": "Radius is killometers"
+						}
+					],
+					"variable": [
+						{
+							"key": "postcode",
+							"value": "LE38PA"
 						}
 					]
 				},
