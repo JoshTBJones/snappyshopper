@@ -1,0 +1,40 @@
+Table organisations {
+  id int [pk]
+  name string
+}
+
+Table stores {
+  id int [pk]
+  uid uuid
+  organisation_id int [ref:> organisations.id]
+  postcode_id int [ref:> postcodes.id]
+  name string
+  open tinyint [default: 1]
+  max_delivery_distance int [default: 1]
+  latitude decimal (10, 8)
+  longitude decimal (11, 8)
+}
+
+Table categories {
+  id int [pk]
+  name string
+  description string
+}
+
+Table postcodes {
+  id int [pk]
+  postcode string
+  outcode string
+  incode string
+  latitude decimal (10, 8)
+  longitude decimal (11, 8)
+  country string
+  region string
+  district string
+  active boolean
+}
+
+Table stores_categories {
+  store_id int [ref:> stores.id]
+  category_id int [ref:> categories.id]
+}
