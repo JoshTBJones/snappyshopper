@@ -12,3 +12,6 @@ A quick break down of my time spent on the project.
 ## 1st January 2025
 - 1230 - 1300
 - 2000 - 2100
+
+## 2nd January 2025
+- 1500 - 1600
