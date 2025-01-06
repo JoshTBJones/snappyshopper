@@ -56,6 +56,24 @@ class Store extends Model
         return $this->belongsTo(Postcode::class);
     }
 
+    /**
+     * Find locations near a given postcode within a specified radius or the default maximum delivery distance.
+     *
+     * This method calculates the distance between the provided postcode's latitude and longitude
+     * and the locations stored in the database using the Haversine formula.
+     *
+     * @param Postcode $postcode The postcode object containing latitude and longitude coordinates.
+     * @param int|null $radius Optional. The radius in kilometers to filter the results. If not provided,
+     *                         the method will use the `max_delivery_distance` column from the database.
+     *
+     * @return \Illuminate\Support\Collection A collection of locations ordered by their distance from the given postcode.
+     *
+     * @throws \Exception If the query execution fails, it may throw an exception depending on the database connection.
+     *
+     * @example
+     * $nearbyLocations = Location::near($postcode, 10); // Find locations within 10 km of the given postcode.
+     * $defaultRadiusLocations = Location::near($postcode); // Find locations using the default maximum delivery distance.
+     */
     public static function near(Postcode $postcode, int $radius = null)
     {
         return self::selectRaw("*, 
